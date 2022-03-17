@@ -1,0 +1,11 @@
+test 2 
+git status
+git add .
+git status
+git commit -m "name fail"
+git status
+git log
+git status
+git push
+git status
+git log
