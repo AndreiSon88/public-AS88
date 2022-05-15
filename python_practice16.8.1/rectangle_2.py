@@ -16,3 +16,13 @@ circle_2 = Circle(10)
 
 print(circle_1.area_circle())
 print(circle_2.area_circle())
+
+figures = [ rect_1,rect_2,square_1,square_2,circle_1,circle_2]
+for figure in figures:
+    if isinstance(figure,Square):
+        print("площадь квадрата =" ,figure.get_area_square())
+
+    elif isinstance(figure,Circle):
+        print("площадь круга = ",figure.area_circle())
+    else:
+        print(" площадь прямоугольника = ",figure.get_area())
