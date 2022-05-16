@@ -1,7 +1,0 @@
-test 1 
-git status 
-git add
-git status
-git commit -m "name file"
-git status 
-git push

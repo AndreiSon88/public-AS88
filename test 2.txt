@@ -1,8 +1,0 @@
-test 2 
-git status
-git add .
-git status 
-git log
-git push
-git status 
-git log

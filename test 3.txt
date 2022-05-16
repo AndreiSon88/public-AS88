@@ -1,7 +1,0 @@
-test 3 
-git status
-git add .
-git status
-git commit -m "test3"
-git status
-git log
