@@ -13,11 +13,11 @@ class MoneyConverter:
         try:
             quote_ticker = keys[quote]
         except KeyError:
-            raise ConvertionException(f'Не удалось обработать валюту {quote}')
+            raise ConvertionException(f'Не удалось обработать валюту {quote}.\nПодсказка - /help,\nВалюты - /values')
         try:
             base_ticker = keys[base]
         except KeyError:
-            raise ConvertionException(f'Не удалось обработать валюту {base} ')
+            raise ConvertionException(f'Не удалось обработать валюту {base}.\nПодсказка - /help,\nВалюты - /values')
 
         try:
             amount = float(amount)
