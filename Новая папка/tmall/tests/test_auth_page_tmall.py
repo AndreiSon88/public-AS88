@@ -9,10 +9,10 @@ def test_auth_with_valid_data(web_browser):  # вход пользователя
     """Test_auth_with_valid_data."""
     page = TmallLoginPage(web_browser)
 
-    # page.login_btn.click()  # нажимаем кнопку Вход на странице login.aliexpress.ru
-    # assert page.login_input_field.is_visible()  # проверяем что поле ввода login отображается на странице
+    page.login_btn.click()  # нажимаем кнопку Вход на странице login.aliexpress.ru
+    assert page.login_input_field.is_visible()  # проверяем что поле ввода login отображается на странице
     page.login_input_field.send_keys(valid_email_tmall_page)  # вводим валидный email
-    # assert page.password_input_field.is_visible()  # проверяем что поле ввода password отображается на странице
+    assert page.password_input_field.is_visible()  # проверяем что поле ввода password отображается на странице
     page.password_input_field.send_keys(valid_password_tmall_page)  # вводим валидный пароль
     page.enter_btn_login.click()  # нажимаем кнопку Войти на странице https://login.aliexpress.ru
     page.wait_page_loaded()  # ждем загрузки станицы

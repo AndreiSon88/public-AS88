@@ -4,7 +4,7 @@ import time
 from config import url_auth
 from pages.base import WebPage
 from pages.elements import WebElement
-from pages.elements import ManyWebElements
+# from pages.elements import ManyWebElements
 
 
 class TmallLoginPage(WebPage):
