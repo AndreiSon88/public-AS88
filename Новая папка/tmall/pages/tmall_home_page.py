@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 # -*- encoding=utf8 -*-
 
-import os, time
-import pickle
+import os
+import time
 
+from config import url_base, cookie_tmall
 from pages.base import WebPage
-from pages.elements import WebElement
 from pages.elements import ManyWebElements
-
-from config import url_base, url_auth ,cookie_tmall
-
+from pages.elements import WebElement
 
 
 class TmallPage(WebPage):
@@ -20,14 +18,11 @@ class TmallPage(WebPage):
             super().__init__(web_driver, url)
 
             web_driver.get(url_base)
-            for cookie in cookie_tmall:   #pickle.load(open("cookies","rb"))
+            for cookie in cookie_tmall:  # pickle.load(open("cookies","rb"))
                 web_driver.add_cookie(cookie)
 
             web_driver.refresh()
             time.sleep(5)
-
-
-
 
         time.sleep(3)
 
@@ -37,8 +32,6 @@ class TmallPage(WebPage):
     # логотип страницы tmall
     logo_tmall = WebElement(xpath='//*[@class="logo-base"]')
     gif_logo_tmall = WebElement(xpath='//*[@class="logo-gif"]')
-
-
 
     # user_account_info_icon
     user_account_info_icon = WebElement(xpath='//*[@class="user-account-info"]')
@@ -52,29 +45,28 @@ class TmallPage(WebPage):
     bayer_protection = WebElement(xpath='//*[@class="ng-item ng-bp"]/a')
     # info bayer protection
     info_bayer_protection = ManyWebElements(xpath='//*[@class="Group--groupContainer--2Qw6qft "]')
-# test_get_support
+    # test_get_support
     # menu_help -  выпадающее меню помощь
     menu_help = WebElement(xpath='//*[@class="ng-sub-title"]')
     # support - техподдержка
     support = WebElement(xpath='//*[@class="ng-help-link"]')
     # logo_help_centr - логотип центра помощи
     logo_help_centr = WebElement(xpath='//*[@class="header-title-3Y6O"]')
-                # # споры и жалобы
-                # disputes_and_complaints = WebElement(xpath='//*[@data-role="complaint-link"]')
-#  test_get_online_chat
+
+    #  test_get_online_chat
     # online_chat -
     online_chat = WebElement(xpath='//*[contains(text(),"Онлайн чат")]')
     # helper_avatar
     helper_avatar = WebElement(xpath='//*[@class="Avatar Avatar--md Avatar--circle"]')
     # # background_login елемент страницы авторизации
     # background_login = WebElement(id="root")
-# test_get_warranty
+    # test_get_warranty
     # warranty
     warranty = WebElement(xpath='//*[contains(text(),"Гарантии")]')
-# language - язык страницы
+    # language - язык страницы
     language = WebElement(id='switcher-language-info')
 
-# contain_language - блок языков
+    # contain_language - блок языков
     contain_language = ManyWebElements(xpath='//*[@class="switcher-site-list"]')
     # btn_language - кнопка язык
     btn_language = WebElement(xpath='//span[contains(text(),"Выбрать язык")]')
@@ -112,14 +104,11 @@ class TmallPage(WebPage):
     deutesch = WebElement(xpath='//*[@data-locale="de_DE"]')
     deutesch_msg = WebElement(xpath='//*[contains(text(),"Deutsch")]')
 
-    korea = WebElement(xpath='//*[@data-locale="ko_KR"]')    #한국어
+    korea = WebElement(xpath='//*[@data-locale="ko_KR"]')  # 한국어
     korea_msg = WebElement(xpath='//*[contains(text(),"한국어")]')
 
-    arabian = WebElement(xpath='//*[@data-locale="ar_MA"]')    #العربية
+    arabian = WebElement(xpath='//*[@data-locale="ar_MA"]')  # العربية
     arabian_msg = WebElement(xpath='//*[contains(text(),"العربية")]')
-
-
-
 
     # my_order_menu
     my_order_menu = WebElement(xpath='//li/a[contains(text(),"Мои заказы")]')
@@ -132,7 +121,6 @@ class TmallPage(WebPage):
     # my_coupons_menu
     my_coupons_menu = WebElement(xpath='//li/a[contains(text(),"Мои купоны")]')
 
-
     # sign_in_user_account_btn - кнопка войти на Tmall
     sign_in_user_account_btn = WebElement(css_selector='a.sign-btn')
 
@@ -142,7 +130,6 @@ class TmallPage(WebPage):
     # Search - поле поиска
     search = WebElement(id='search-key')
 
-
     # Search button - кнопка поиска
     search_run_button = WebElement(xpath='//*[@class="search-button"]')
 
@@ -151,13 +138,6 @@ class TmallPage(WebPage):
 
     # Titles of the products in search results
     products_titles = ManyWebElements(xpath='//*[@class="SearchProductFeed_SearchProductFeed__productFeed__tznhm"]')
-
-
-
-
-
-
-
 
     # Button to sort products by price
     sort_products_by_price = WebElement(css_selector='button[data-autotest-id="dprice"]')
@@ -174,7 +154,7 @@ class TmallPage(WebPage):
     basket_counter_shoping_card = WebElement(xpath='//span[@class="cart-number"]')
     # favorite_icon иконка избранное
     favorite_icon = WebElement(xpath='//*[@class="nav-wishlist"]/a')
-# test_add_product_in_basket
+    # test_add_product_in_basket
     # product_wrench  ключ динамометрический в результате поиска
     product_wrench = WebElement(xpath='//*[@class="product-snippet_ProductSnippet__description__152uer"]/a')
     # product_name
@@ -184,19 +164,18 @@ class TmallPage(WebPage):
     # btn_in_basket
     btn_in_basket = WebElement(xpath='//*[@class="ali-kit_Tooltip__wrapper__sht7gl"]/button')
     # list_product_in_basket
-    list_product_in_basket = WebElement(xpath='//*[@class="ShoppingcartItemList_ShoppingcartItemList__storeList__tbcus"]')
+    list_product_in_basket = WebElement(
+        xpath='//*[@class="ShoppingcartItemList_ShoppingcartItemList__storeList__tbcus"]')
 
-
-
-# fm_login_id
+    # fm_login_id
     fm_login_id = WebElement(id='fm-login-id')
-# fm_login_password
+    # fm_login_password
     fm_login_password = WebElement(id='fm-login-password')
-# btn_in_login
-    btn_in_login = WebElement(xpath='//*[@class="comet-btn comet-btn-primary comet-btn-large comet-btn-block login-submit"]')
+    # btn_in_login
+    btn_in_login = WebElement(
+        xpath='//*[@class="comet-btn comet-btn-primary comet-btn-large comet-btn-block login-submit"]')
 
-
-# test get report copyright
+    # test get report copyright
     report_copyright = WebElement(xpath='//*[contains(text(),"Сообщить о нарушении авторских прав")]')
 
     subsections = ManyWebElements(xpath='//div[@class="rax-view categoryWrap"]')
